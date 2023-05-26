@@ -3,6 +3,7 @@ const form = document.getElementById("form");
 const numberA = document.getElementById("numberA");
 const numberB = document.getElementById("numberB");
 const alert = document.getElementById("alert");
+const box = document.getElementById("box");
 const A4h = 200;
 const A4v = 287;
 const A3h = 287;
@@ -12,8 +13,8 @@ const SA3v = 465;
 
 form.addEventListener("submit", (e) => {
     e.preventDefault();
-    let resultA = numberA.value
-    let resultB = numberB.value
+    let resultA = numberA.value;
+    let resultB = numberB.value;
     alert.innerHTML = "";
 
     if(resultA == ""){
@@ -22,12 +23,28 @@ form.addEventListener("submit", (e) => {
     }if(resultB == ""){
         alert.innerHTML = "Ingresa un valor en B";
     }else{
+    modified();
     validateA4();
     validateA3();
     validateSA3();
   }
   });
+  const modified = () => {
+    let resultA = numberA.value;
+    let resultB = numberB.value;
+    if(resultA > resultB){
+      resultB = (resultB/resultA)*100;
+      resultA = 100;
+      box.style.width = (resultA) + "%";
+      box.style.height = (resultB) + "%";
+    }else{
+      resultA = (resultA/resultB)*100;
+      resultB = 100;
+      box.style.width = (resultA) + "%";
+      box.style.height = (resultB) + "%";
+    }
 
+  }
   const validateA4 = () => {
     const HA4value = document.getElementById("HA4value"); 
     const VA4value = document.getElementById("VA4value"); 
