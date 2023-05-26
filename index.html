@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RGB Calculadora</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main">
+        <h1 class="text">Calculadora de Cortes</h1>
+        <div class="calculator">
+            <div class="calculatorForm">
+
+                <form action="" class="form" id="form">
+                    <label for="">A
+                        <input id="numberA" type="number" min="0" placeholder="milimetros">
+                    </label>
+                    <label for="">B
+                        <input id="numberB" type="number" min="0" placeholder="milimetros">
+                    </label>
+                    <button id="result" class="btn">Calcular</button>
+                </form>
+
+                <div class="preview">
+                    <p class="b">B</p>
+                    <div class="previewBox">
+                        <p>A</p>
+                        <img class="box" src="assets/RGBLogo.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <p class="alert" id="alert" ></p>
+            <div class="result">
+                <div class="position">
+                    <h3>Vertical</h3>
+                    <div class="boxSize">
+                        <div class="size">
+                            <h4>A4</h4>
+                            <div class="countV" id="VA4value"></div>
+                        </div>
+                        <div class="size">
+                            <h4>A3</h4>
+                            <div class="countV" id="VA3value"></div>
+                        </div>
+                        <div class="size">
+                            <h4>+A3</h4>
+                            <div class="countV" id="VSA3value"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="position">
+                    <h3>Horizontal</h3>
+                    <div class="boxSize">
+                        <div class="size">
+                            <h4>A4</h4>
+                            <div class="count"  id="HA4value"></div>
+                        </div>
+                        <div class="size">
+                            <h4>A3</h4>
+                            <div class="count" id="HA3value"></div>
+                        </div>
+                        <div class="size">
+                            <h4>+A3</h4>
+                            <div class="count" id="HSA3value"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+         </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

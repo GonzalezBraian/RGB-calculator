@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@500&display=swap');@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap');
+*{
+ padding: 0px;
+ margin: 0px;
+ box-sizing: border-box;
+ text-align: center;
+ font-family: 'Kanit', sans-serif;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    
+}
+body{
+    background-color: #000;
+}
+.text{
+    margin-top: 15px;
+    padding: 0px;
+}
+
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    color: white;
+
+}
+.calculatorForm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+.calculator{
+    background-color: #242424;
+    border-radius: 20px;
+    margin: 10px;
+    padding: 20px 30px;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+    margin-top: 30px;
+}
+.btn{
+    margin-left: 15px;
+    width: 180px;
+    height: 30px;
+}
+.btn:hover{
+    background-color: #22e209;
+    border: none;
+}
+.preview{
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.preview p{
+    margin-right: 10px;
+}
+.previewBox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.box{
+    width: 160px;
+    height: 100px;
+    background-color: #fff;
+}
+.b{
+    padding-top: 20px;
+}
+.alert{
+    height: 10px;
+    font-size: .9em;
+    padding: 8px;
+    color: red;
+ }
+ .result{
+    margin-top: 10px;
+ }
+.position{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.boxSize{
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+    gap: 30px;
+}
+.size{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.countV{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    width: 70px;
+    height: 90px;
+    color: #000;
+}
+.count{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    width: 110px;
+    height: 70px;
+    color: #000;
+}
