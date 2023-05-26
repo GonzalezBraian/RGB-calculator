@@ -127,3 +127,11 @@ form{
     height: 70px;
     color: #000;
 }
+@media (max-width: 800px) {
+    .calculatorForm{
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+  }
