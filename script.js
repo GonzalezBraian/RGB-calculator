@@ -11,36 +11,48 @@ const A3v = 410;
 const SA3h = 315;
 const SA3v = 465;
 
+
+
 form.addEventListener("submit", (e) => {
     e.preventDefault();
+
     let resultA = numberA.value;
     let resultB = numberB.value;
     alert.innerHTML = "";
-
     if(resultA == ""){
       alert.innerHTML = "Ingresa un valor en A";
       return
     }if(resultB == ""){
         alert.innerHTML = "Ingresa un valor en B";
     }else{
+
     modified();
+    clear();
     validateA4();
     validateA3();
     validateSA3();
   }
   });
+
   const modified = () => {
     let resultA = numberA.value;
     let resultB = numberB.value;
-    if(resultA > resultB){
-      resultB = (resultB/resultA)*100;
+
+    if(Number(resultA) > Number(resultB)){
+      let resultC = parseInt((resultB/resultA)*100);
       resultA = 100;
-      box.style.width = (resultA) + "%";
-      box.style.height = (resultB) + "%";
+      box.style.height = (resultA) + "%";
+      box.style.height = (resultC) + "%";
     }else{
       resultA = (resultA/resultB)*100;
+      console.log("entra en B mayor que A")
+      console.log("-------")
+      console.log(resultA)
+    console.log(resultB)
+
       resultB = 100;
       box.style.width = (resultA) + "%";
+      console.log(box.style.width)
       box.style.height = (resultB) + "%";
     }
 
@@ -59,8 +71,34 @@ form.addEventListener("submit", (e) => {
     let result4 = A4v /resultA ;
     let resultH = Math.floor(result3) * Math.floor(result4);
 
-    VA4value.innerHTML = Math.floor(resultV);
-    HA4value.innerHTML = Math.floor(resultH);
+    const mountH = document.createElement("div");
+    const mountV = document.createElement("div");
+    mountH.classList.add('newdiv');
+    mountV.classList.add('newdiv');
+    HA4value.appendChild(mountH)
+    VA4value.appendChild(mountV)
+    mountH.innerHTML = Math.floor(resultH);
+    mountV.innerHTML = Math.floor(resultV);
+
+    resultB = (resultB/A4h)*70;
+    resultA = (resultA/A4v)*110;
+
+    for (let i = 0; i < resultV; i++) {
+      const cuts = document.createElement("div");
+      cuts.classList.add('paper');
+      cuts.style.width = (resultA) + "px";
+      cuts.style.height = (resultB) + "px";
+      VA4value.appendChild(cuts)
+    }  
+
+    for (let i = 0; i < resultH; i++) {
+      const cuts = document.createElement("div");
+      cuts.classList.add('paper');
+      cuts.style.width = (resultA) + "px";
+      cuts.style.height = (resultB) + "px";
+      HA4value.appendChild(cuts)
+    }   
+    
   }
 
   const validateA3 = () => {
@@ -77,8 +115,33 @@ form.addEventListener("submit", (e) => {
     let result4 = A3v /resultA ;
     let resultH = Math.floor(result3) * Math.floor(result4);
 
-    VA3value.innerHTML = Math.floor(resultV);
-    HA3value.innerHTML = Math.floor(resultH);
+    const mountH = document.createElement("div");
+    const mountV = document.createElement("div");
+    mountH.classList.add('newdiv');
+    mountV.classList.add('newdiv');
+    HA3value.appendChild(mountH)
+    VA3value.appendChild(mountV)
+    mountH.innerHTML = Math.floor(resultH);
+    mountV.innerHTML = Math.floor(resultV);
+
+    resultB = (resultB/A3h)*70;
+    resultA = (resultA/A3v)*110;
+
+    for (let i = 0; i < resultV; i++) {
+      const cuts = document.createElement("div");
+      cuts.classList.add('paper');
+      cuts.style.width = (resultA) + "px";
+      cuts.style.height = (resultB) + "px";
+      VA3value.appendChild(cuts)
+    }  
+
+    for (let i = 0; i < resultH; i++) {
+      const cuts = document.createElement("div");
+      cuts.classList.add('paper');
+      cuts.style.width = (resultA) + "px";
+      cuts.style.height = (resultB) + "px";
+      HA3value.appendChild(cuts)
+    }   
   }
 
   const validateSA3 = () => {
@@ -94,7 +157,54 @@ form.addEventListener("submit", (e) => {
     let result3 = SA3h /resultB ;
     let result4 = SA3v /resultA ;
     let resultH = Math.floor(result3) * Math.floor(result4);
+ 
+    const mountH = document.createElement("div");
+    const mountV = document.createElement("div");
+    mountH.classList.add('newdiv');
+    mountV.classList.add('newdiv');
+    HSA3value.appendChild(mountH)
+    VSA3value.appendChild(mountV)
+    mountH.innerHTML = Math.floor(resultH);
+    mountV.innerHTML = Math.floor(resultV);
 
-    VSA3value.innerHTML = Math.floor(resultV);
-    HSA3value.innerHTML = Math.floor(resultH);
+    resultB = (resultB/SA3h)*70;
+    resultA = (resultA/SA3v)*110;
+
+    for (let i = 0; i < resultV; i++) {
+      const cuts = document.createElement("div");
+      cuts.classList.add('paper');
+      cuts.style.width = (resultA) + "px";
+      cuts.style.height = (resultB) + "px";
+      VSA3value.appendChild(cuts)
+    }  
+
+    for (let i = 0; i < resultH; i++) {
+      const cuts = document.createElement("div");
+      cuts.classList.add('paper');
+      cuts.style.width = (resultA) + "px";
+      cuts.style.height = (resultB) + "px";
+      HSA3value.appendChild(cuts)
+    }      
+
+  }
+
+  const clear = () => {
+    while (HSA3value.firstChild) {
+      HSA3value.removeChild(HSA3value.firstChild);
+    }
+    while (VSA3value.firstChild) {
+      VSA3value.removeChild(VSA3value.firstChild);
+    }
+    while (HA3value.firstChild) {
+      HA3value.removeChild(HA3value.firstChild);
+    }
+    while (VA3value.firstChild) {
+      VA3value.removeChild(VA3value.firstChild);
+    }
+    while (HA4value.firstChild) {
+      HA4value.removeChild(HA4value.firstChild);
+    }
+    while (VA4value.firstChild) {
+      VA4value.removeChild(VA4value.firstChild);
+    }
   }
